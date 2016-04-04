@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+gem "middleman"
+gem "susy"
+gem "compass"
+gem "breakpoint"
