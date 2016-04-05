@@ -1,0 +1,8 @@
+<%= wrap_layout :layout do
+  "<article class='content'>
+    <h1>#{current_page.data.title}</h1>
+    <time>#{current_page.data.date.strftime('%b %e, %Y')}</time>
+    <span>#{current_page.data.author}</span>
+    #{yield}
+  </article>"
+ end %>
