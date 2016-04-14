@@ -1,0 +1,113 @@
+@import "susy";
+
+// TODO move into color
+$link_blue: #6082B6;
+$light_gray: #D3D3D3;
+
+
+// TODO move into utils
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
+}
+
+// TODO move elsewhere (?)
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted $link_blue;
+  color: $link_blue;
+
+  &:hover {
+  }
+
+  &:visited {
+  }
+}
+
+// TODO move elsewhere
+footer {
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 6em;
+  margin-bottom: 2em;
+  font-family: "aktiv-grotesk";
+  #notice {
+    font-size: 1rem;
+    vertical-align: top;
+  }
+
+  #totop {
+    font-size: 1rem;
+    float: right;
+    font-weight: bold;
+  }
+}
+
+#grayend {
+  height: 100px;
+  background-color: $light_gray;
+}
+
+
+ul.pois {
+  display: table;
+  width: 100%;
+  /*text-align: center;*/
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  li {
+    display: table-cell;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body#page404 {
+  margin: 0;
+  padding: 0;
+  font-family: "minion-pro-condensed-caption";
+  font-size: 25px;
+}
+
+h1 {
+  font-family: "aktiv-grotesk";
+}
+
+main {
+  margin: 2em 0;
+  .content {
+    text-align: center; // not sure what I think of this ...
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+figure {
+  margin: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  img#wrong_way {
+    width: 500px;
+  }
+
+  strong {
+    /*font-variant: small-caps;*/
+    font-size: 1.15em;
+  }
+
+  emph {
+    font-style: italic;
+  }
+}
+
+section.moretodo {
+  h1 {
+    /*font-variant: small-caps;*/
+  } 
+}
