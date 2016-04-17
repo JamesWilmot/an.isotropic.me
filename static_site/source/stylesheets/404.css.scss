@@ -5,6 +5,19 @@ $link_blue: #6082B6;
 $light_gray: #D3D3D3;
 
 
+// TODO move else where
+html.wf-loading {
+  filter: blur(9px); // use compass!
+  -webkit-filter: blur(9px);
+  transition: 1s -webkit-filter linear;
+  transition: 1s filter linear;
+  img {
+    filter: blur(0); // use compass!
+    -webkit-filter: blur(0);
+  }
+}
+
+
 // TODO move into utils
 .visuallyhidden { 
   position: absolute; 
