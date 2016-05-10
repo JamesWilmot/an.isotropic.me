@@ -16,10 +16,15 @@ page '/*.txt', layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
+
+activate :directory_indexes
+
 ###
 # Helpers
 ###
 
+
+# journal blog
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   blog.prefix = "journal"
@@ -47,6 +52,7 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+# van blog
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   blog.prefix = "van"
@@ -58,6 +64,62 @@ activate :blog do |blog|
   # blog.taglink = "tags/{tag}.html"
   
   blog.layout = "van"
+  # blog.summary_separator = /(READMORE)/
+  # blog.summary_length = 250
+  # blog.year_link = "{year}.html"
+  # blog.month_link = "{year}/{month}.html"
+  # blog.day_link = "{year}/{month}/{day}.html"
+  # blog.default_extension = ".markdown"
+
+  #blog.tag_template = "tag.html"
+  #blog.calendar_template = "calendar.html"
+
+  # Enable pagination
+  # blog.paginate = true
+  # blog.per_page = 10
+  # blog.page_link = "page/{num}"
+end
+
+# projects blog
+activate :blog do |blog|
+  # This will add a prefix to all links, template references and source paths
+  blog.prefix = "projects"
+  blog.name = "projects"
+
+  blog.permalink = "{title}.html"
+  # Matcher for blog source files
+  blog.sources = "{year}-{month}-{day}-{title}.html"
+  # blog.taglink = "tags/{tag}.html"
+  
+  blog.layout = "projects"
+  # blog.summary_separator = /(READMORE)/
+  # blog.summary_length = 250
+  # blog.year_link = "{year}.html"
+  # blog.month_link = "{year}/{month}.html"
+  # blog.day_link = "{year}/{month}/{day}.html"
+  # blog.default_extension = ".markdown"
+
+  #blog.tag_template = "tag.html"
+  #blog.calendar_template = "calendar.html"
+
+  # Enable pagination
+  # blog.paginate = true
+  # blog.per_page = 10
+  # blog.page_link = "page/{num}"
+end
+
+# essays
+activate :blog do |blog|
+  # This will add a prefix to all links, template references and source paths
+  blog.prefix = "essays"
+  blog.name = "essays"
+
+  blog.permalink = "{title}.html"
+  # Matcher for blog source files
+  blog.sources = "{year}-{month}-{day}-{title}.html"
+  # blog.taglink = "tags/{tag}.html"
+  
+  blog.layout = "essays"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
