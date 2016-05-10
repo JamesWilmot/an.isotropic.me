@@ -1,0 +1,37 @@
+---
+pageable: true
+per_page: 10
+title: Van
+blog: van
+---
+<% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<% page_articles.each_with_index do |article, i| %>
+  <article>
+    <header>
+      <h1>
+        <%= link_to article.title, article %>  
+      </h1>
+      <time><%= article.date.strftime('%b %e, %Y') %></time> 
+    </header>
+    <!-- use article.summary(250) if you have Nokogiri available to show just
+         the first 250 characters -->
+    <p><%= article.summary(100) %></p>
+  </article>
+<% end %>
+
+<% if paginate %>
+  <% if next_page %>
+    <p><%= link_to 'Next page', next_page %></p>
+  <% end %>
+<% end %>
+
+
+<script src="https://use.typekit.net/qgy5qlp.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
