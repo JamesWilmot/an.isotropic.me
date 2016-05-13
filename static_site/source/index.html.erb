@@ -4,15 +4,34 @@ nopipetitle: True
 ---
 hi world?
 
-<% blog("van").articles[0...5].each do |article| %>
-  <article>
-    <h1>
-      <a href="<%= article.url %>"><%= article.title %></a>
-      <time><%= article.date.strftime('%b %e %Y') %></time>
-    </h1>
+<section>
+  <h1>Essays</h1>
+  <% blog("essays").articles[0...5].each do |article| %>
+    <article>
+      <h1>
+        <a href="<%= article.url %>"><%= article.title %></a>
+        <time><%= article.date.strftime('%b %e %Y') %></time>
+      </h1>
 
-    <%= article.summary %>
+      <%= article.summary %>
 
-    <a href="<%= article.url %>">Read more</a>
-  </article>
-<% end %>
+      <a href="<%= article.url %>">Read more</a>
+    </article>
+  <% end %>
+</section>
+
+<section>
+  <h1>Projects</h1>
+  <% blog("projects").articles[0...5].each do |article| %>
+    <article>
+      <h1>
+        <a href="<%= article.url %>"><%= article.title %></a>
+        <time><%= article.date.strftime('%b %e %Y') %></time>
+      </h1>
+
+      <%= article.summary %>
+
+      <a href="<%= article.url %>">Read more</a>
+    </article>
+  <% end %>
+</section>
