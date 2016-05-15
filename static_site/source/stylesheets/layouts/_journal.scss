@@ -12,6 +12,12 @@ $almost-white: #FAFAFA;
 
 $glaucous-grey: #6082B6;
 
+$regal-red: #903;
+
+
+
+
+
 
 body.journal {
   font-family: "minion-pro-display";
@@ -32,35 +38,37 @@ body.journal {
   -webkit-font-feature-settings: "onum";
   font-feature-settings: "onum";
 
+  a {
+    text-decoration: none;
+    color: $glaucous-grey;
+    border-bottom: 1px dotted $glaucous-grey;
 
-  header  {
-    time { 
-      font-style: italic;
-      margin-right: 1em;
-      
-      .day {
-        font-variant-numeric: ordinal;
-        -moz-font-feature-settings: "ordn";
-        -webkit-font-feature-settings: "ordn";
-        font-feature-settings: "ordn";
-      }
-    }
-
-    h1.date {
-      text-align: right;
-      font-weight: 400;
-      font-size: 1em;
+    &:hover {
+      border-bottom: 1px solid $glaucous-grey;
     }
   }
 
-  article {
+  h1.date {
+    font-weight: 400;
+    font-size: 1em;
+  }
+
+  .day {
+    font-variant-numeric: ordinal;
+    -moz-font-feature-settings: "ordn";
+    -webkit-font-feature-settings: "ordn";
+    font-feature-settings: "ordn";
+  }
+
+  article.content {
     width: 760px;
     margin: 5em auto;
-    margin-bottom: 7em;
+    margin-bottom: 0em;
+
     & > p:first-of-type {
       &:first-letter {
         float: left; 
-        color: #903; 
+        color: $regal-red; 
         font-size: 3em; 
         line-height: 40px; 
         padding-top: 10px; 
@@ -69,17 +77,63 @@ body.journal {
         font-weight: bold;
       }
     }
-    
-    a {
-      text-decoration: none;
-      color: $glaucous-grey;
-      border-bottom: 1px dotted $glaucous-grey;
 
-      &:hover {
-        border-bottom: 1px solid $glaucous-grey;
+    .acronym {
+      text-transform: lowercase;
+      font-variant-caps: small-caps;
+      -moz-font-feature-settings: "smcp";
+      -webkit-font-feature-settings: "smcp";
+      font-feature-settings: "smcp";
+    }
+
+    &:after {
+      font-family: "soft-ornaments";
+      content: "9";
+      font-size: 150px;
+      display: block;
+      text-align: center;
+      color: $regal-red; 
+      margin-top: -0.15em;
+    }
+
+    header  {
+      time { 
+        font-style: italic;
+        margin-right: 1em;
+        
+      }
+
+      h1.date {
+        text-align: right;
       }
     }
 
+
+    h2 {
+      text-transform: lowercase;
+      font-weight: 400;
+      font-size: 1em;
+
+      // TODO compass?
+      font-variant-caps: small-caps;
+      -moz-font-feature-settings: "smcp";
+      -webkit-font-feature-settings: "smcp";
+      font-feature-settings: "smcp";
+    }
+    
+    hr {
+      border: none;
+
+      &:before {
+        display: block;
+        font-family: "soft-ornaments";
+        content: "Z";
+        text-align: center;
+        font-size: 120px;
+        margin-top: -14px;
+        color: $dark-grey;
+      }
+    }
     
 
     ul {
@@ -110,12 +164,31 @@ body.journal {
     }
 
     blockquote {
+      quotes: '\201c' '\201d'; 
+
       .attribution {
         text-align: right;
         margin-right: 5em;
       }
       p:last-of-type {
         margin-bottom: 0.25em;
+        &:after {
+          content: close-quote;
+          /*font-size: 30px;*/
+          color: $dark-grey;
+        }
+      }
+
+      p:first-of-type {
+      position: relative;
+        &:before {
+          position: absolute;
+          left: -17px;
+          top: -10px;
+          content: open-quote;
+          font-size: 45px;
+          color: $dark-grey;
+        }
       }
     }
 
@@ -137,6 +210,56 @@ body.journal {
     }
   }
 
+  section.continue_reading {
+    @include clearfix;
+    width: 800px;
+    margin: 1em auto;
+    margin-bottom: 3em;
 
+    h1 {
+      display: inline-block;
+      vertical-align: top;
+    }
 
+    .next {
+      float: right;
+      &:after {
+        display: inline-block;
+        font-family: "soft-ornaments";
+        font-size: 80px;
+        content: "q";
+        color: $dark-grey;
+        margin-left: 15px;
+      }
+    }
+    .previous {
+      float: left;
+      &:before {
+        display: inline-block;
+        font-family: "soft-ornaments";
+        font-size: 80px;
+        content: "r";
+        color: $dark-grey;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  section.copyright_notice {
+    width: 800px;
+    margin: 0.5em auto;
+    text-align: right;
+    small {
+      /*text-transform: lowercase;*/
+      display: block;
+      color: $mid-grey; 
+
+      // TODO compass??
+      /*font-variant-caps: small-caps;*/
+      /*-moz-font-feature-settings: "smcp";*/
+      /*-webkit-font-feature-settings: "smcp";*/
+      /*font-feature-settings: "smcp";*/
+    }
+  }
 }
+
