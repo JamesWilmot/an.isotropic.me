@@ -10,3 +10,4 @@ gem "builder"
 gem "sass-globbing"
 gem "middleman-bibtex"
 gem 'middleman-s3_sync'
+gem 'middleman-sprockets'
