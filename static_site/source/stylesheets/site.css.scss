@@ -1,4 +1,10 @@
 @charset "utf-8";
+@import "compass";
+@import "compass/utilities/general/clearfix";
 @import "normalize";
-@import "layouts/*";
 
+
+@import "layouts/*";
+@import "utils/*";
+
+@include font-face("soft-ornaments", font-files("stylesheets/fonts/soft_ornaments_three.ttf"));
