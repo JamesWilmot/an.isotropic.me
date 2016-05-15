@@ -1,6 +1,142 @@
-body.article {
-  article.content {
+$body-background-gray: #f8f8f8;
+
+// from indesign
+// darker to lighter
+$black: #000000;
+$almost-black: #282828;
+$dark-grey: #A0A0A0;
+$mid-grey: #D2D2D2;
+$light-grey: #f8f8f8;
+//$light-grey: #F0F0F0;
+$almost-white: #FAFAFA;
+
+$glaucous-grey: #6082B6;
+
+
+body.journal {
+  font-family: "minion-pro-display";
+  font-weight: 500;
+  font-size: 24px;
+
+  margin: 0;
+  padding: 0;
+
+  // todo compass?
+  font-variant-ligatures: common-ligatures;
+  -moz-font-feature-settings: "liga", "clig";
+  -webkit-font-feature-settings: "liga", "clig";
+  font-feature-settings: "liga", "clig";
+
+  font-variant-numeric: oldstyle-nums;
+  -moz-font-feature-settings: "onum";
+  -webkit-font-feature-settings: "onum";
+  font-feature-settings: "onum";
+
+
+  header  {
+    time { 
+      font-style: italic;
+      margin-right: 1em;
+      
+      .day {
+        font-variant-numeric: ordinal;
+        -moz-font-feature-settings: "ordn";
+        -webkit-font-feature-settings: "ordn";
+        font-feature-settings: "ordn";
+      }
+    }
+
+    h1.date {
+      text-align: right;
+      font-weight: 400;
+      font-size: 1em;
+    }
   }
 
-}
+  article {
+    width: 760px;
+    margin: 5em auto;
+    margin-bottom: 7em;
+    & > p:first-of-type {
+      &:first-letter {
+        float: left; 
+        color: #903; 
+        font-size: 3em; 
+        line-height: 40px; 
+        padding-top: 10px; 
+        padding-right: 2px; 
+        padding-left: 3px;
+        font-weight: bold;
+      }
+    }
+    
+    a {
+      text-decoration: none;
+      color: $glaucous-grey;
+      border-bottom: 1px dotted $glaucous-grey;
 
+      &:hover {
+        border-bottom: 1px solid $glaucous-grey;
+      }
+    }
+
+    
+
+    ul {
+      list-style-type: square;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0px;
+        li:before {
+          position: absolute;
+          content: "\273C";
+          left: -38px;
+          top: 0.25em;
+          /*margin: 0 1em;*/
+          font-size: 0.8em;
+        }
+
+        li {
+          position: relative;
+          margin-left: 3em;
+        }
+      }
+
+    ul, ol, blockquote {
+      margin-right: 4em;
+      color: $almost-black;
+    }
+
+    blockquote {
+      .attribution {
+        text-align: right;
+        margin-right: 5em;
+      }
+      p:last-of-type {
+        margin-bottom: 0.25em;
+      }
+    }
+
+    ol, ul {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 0.5em;
+        }
+
+      }
+    }
+    
+
+    ol {
+      li {
+        padding-left: 0.5em;
+        margin-left: 1em;
+      }
+    }
+  }
+
+
+
+}
