@@ -1,5 +1,5 @@
 <% wrap_layout :layout do %>
-  <article>
+  <article class="content">
     <header>
       <h1 class="date">
         <time>
@@ -10,6 +10,38 @@
     </header>
     <%= yield %>
   </article>
+
+  <%# TODO put into partial?? %>
+  <section class="continue_reading">
+    <h1 class="visuallyhidden">Other entries</h1>
+    <% prev = current_page.previous_article %>
+    <% next_article = current_page.next_article %>
+    <% if prev %>
+      <article class="previous">
+      <h1 class="date">
+      <a href="<%=prev.url%>" title="Previous">
+        <%=prev.data.date.strftime("<span class='day'>#{prev.data.date.day.ordinalize}</span> %B %Y") %>
+      </a>
+      </h1>
+      </article>
+    <% end %>
+    <% if next_article %>
+      <article class="next">
+      <h1 class="date">
+      <a href="<%=next_article.url%>" title="Next">
+        <%=next_article.data.date.strftime("<span class='day'>#{next_article.data.date.day.ordinalize}</span> %B %Y") %>
+      </a>
+      </h1>
+      </article>
+    <% end %>
+  </section>
+
+  <footer>
+  <section class="copyright_notice">
+    <h1 class="visuallyhidden">Copyright notice</h1>
+    <small id="notice">Copyright© 2016 James Wilmot. All Rights Reserved.</small>
+  </section>
+  </footer>
 <% end %>
 
 <script src="https://use.typekit.net/lee8rpv.js"></script>
