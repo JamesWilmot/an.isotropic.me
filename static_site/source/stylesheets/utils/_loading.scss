@@ -1,0 +1,10 @@
+html.wf-loading {
+  filter: blur(9px); // use compass!
+  -webkit-filter: blur(9px);
+  transition: 3s -webkit-filter linear;
+  transition: 3s filter linear;
+  img {
+    filter: blur(0); // use compass!
+    -webkit-filter: blur(0);
+  }
+}
