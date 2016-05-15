@@ -1,29 +1,11 @@
 <% wrap_layout :layout do %>
   <article>
     <header>
-      <h1><%= current_page.data.title %></h1>
-      <time><%= current_page.data.date.strftime('%b %e, %Y') %></time>
-      <span><%= current_page.data.author %></span>
+      <h1 class="date"><time><%= current_page.data.date.strftime('<span class="day">%eth</span> %B %Y') %></time></h1>
     </header>
     <%= yield %>
-
-    <% if current_page.data.reading %>
-    <h2>Further Reading</h2>
-    <ul>
-      <% current_page.data.reading.each do |item| %>
-        <li>
-          <article>
-            <h1><%= item.title %></h1>
-            <% if item.author %>
-              <span class="author"><%= item.author %></span>
-            <% end %>
-            <% if item.description %>
-              <p class="description"><%= item.description %></p>
-            <% end %>
-          </article>
-        </li>
-      <% end %>
-    </ul>
-    <% end %>
   </article>
 <% end %>
+
+<script src="https://use.typekit.net/lee8rpv.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
