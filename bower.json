@@ -1,0 +1,21 @@
+{
+  "name": "an.isotropic.me",
+  "homepage": "https://github.com/JamesWilmot/an.isotropic.me",
+  "authors": [
+    "James Wilmot <jameswilmot2000@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mousetrap": "^1.5.3"
+  }
+}
